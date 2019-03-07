@@ -21,4 +21,9 @@ article {
     padding: 10px;
     margin: 10px;
     background: aqua;
+    flex: 1 200px;
+}
+
+article:nth-of-type(3) {
+    flex: 2 200px;
 }
