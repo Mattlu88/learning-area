@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Tribute Page</title>
+    <style>
+    	body {
+    		font: 1em/1.2 Arial, Helvetica, sans-serif;
+    	}
+
+    	#main {
+    		margin: 2em 0.2em;
+    		border-radius: 1%;
+    		background-color: #CCFFFF;
+    		display: grid;
+            text-align: center;
+    	}
+
+    	#header {
+
+    	}
+
+        #img-div {
+            background-color: white;
+        }
+
+        #tribute-info {
+            display:grid;
+            grid-template-columns: 1fr 3fr 1fr;
+            grid-template-rows: 1fr auto;
+            text-align: left;
+        }
+
+        #tribute-info > h3 {
+            grid-column: 2 / 3;
+        }
+
+        #tribute-info > ul {
+            grid-column: 2 / 3;
+            grid-row:2;
+        }
+	</style>
+</head>
+
+<body>
+    <main id="main">
+        <header id="title">
+            <h1>Dr. Norman Borlaug</h1>
+            <h2>The man who saved a billon lives</h2>
+        </header>
+        <section id="img-div">
+            <img id="image" src="" alt="">
+            <p id="image-caption">Dr. Norman Borlaug, second from left, trains biologists in Mexico on how to increase wheat yields - part of his life-long war on hunger.</p>
+        </section>
+        <section id="tribute-info">
+            <h3>Here's a time line of Dr. Borlaug's life:</h3>
+            <ul>
+                <li>1914 - Born in Cresco, Iowa</li>
+                <li>1933 - Leaves his family's farm to attend the University of Minnesota, thanks to a Depression era program known as the "National Youth Administration"</li>
+                <li>1935 - Has to stop school and save up more money. Works in the Civilian Conservation Corps, helping starving Americans. "I saw how food changed them", he said. "All of this left scars on me."</li>
+            </ul>
+        </section>
+        <sectiona id="citation">
+            <p>"Borlaug's life and achievement are testimony to the far-reaching contribution that one man's towering intellect, persistence and scientific vision can make to human peace and progress."</p>
+            <p>-- Indian Prime Minister Manmohan Singh</p>
+        </section>
+        <footer id="more-info">
+            <p>
+                If you have time, you should read more about this incredible human being on his
+                <a href="http://www.google.com" target="_blank">Wikipedia</a> entry.
+            </p>
+        </footer>
+    </main>
+</body>
+
+</html>
