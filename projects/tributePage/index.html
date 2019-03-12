@@ -27,18 +27,12 @@
 
         #tribute-info {
             display:grid;
-            grid-template-columns: 1fr 3fr 1fr;
-            grid-template-rows: 1fr auto;
             text-align: left;
         }
 
-        #tribute-info > h3 {
-            grid-column: 2 / 3;
-        }
-
         #tribute-info > ul {
-            grid-column: 2 / 3;
-            grid-row:2;
+            max-width: 50%;
+            justify-self: center;
         }
 	</style>
 </head>
@@ -54,8 +48,7 @@
             <p id="image-caption">Dr. Norman Borlaug, second from left, trains biologists in Mexico on how to increase wheat yields - part of his life-long war on hunger.</p>
         </section>
         <section id="tribute-info">
-            <h3>Here's a time line of Dr. Borlaug's life:</h3>
-            <ul>
+            <ul><h3>Here's a time line of Dr. Borlaug's life:</h3>
                 <li>1914 - Born in Cresco, Iowa</li>
                 <li>1933 - Leaves his family's farm to attend the University of Minnesota, thanks to a Depression era program known as the "National Youth Administration"</li>
                 <li>1935 - Has to stop school and save up more money. Works in the Civilian Conservation Corps, helping starving Americans. "I saw how food changed them", he said. "All of this left scars on me."</li>
