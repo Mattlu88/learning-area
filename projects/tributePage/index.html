@@ -10,29 +10,66 @@
     	}
 
     	#main {
-    		margin: 2em 0.2em;
+            margin: 30px 2px;
+            background-color: rgb(230, 230, 230);
     		border-radius: 1%;
-    		background-color: #CCFFFF;
-    		display: grid;
             text-align: center;
     	}
 
-    	#header {
-
-    	}
+        #title {
+            padding-top: 20px;
+        }
+    	#title h2 {
+            font-size: 1em;
+            font-weight: normal;
+        }
 
         #img-div {
+            margin: 10px;
+            padding:5px;
             background-color: white;
         }
 
-        #tribute-info {
-            display:grid;
-            text-align: left;
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: auto;
         }
 
-        #tribute-info > ul {
-            max-width: 50%;
-            justify-self: center;
+        #image-caption {
+            line-height: 1.5;
+            font-size:1em;
+            padding: 0px 30px;
+        }
+
+        #tribute-info {
+            text-align:left;
+        }
+
+        #tribute-info ul {
+            max-width: 550px;
+            margin:auto;
+            padding: 20px 10px 10px 60px;
+        }
+
+        #tribute-info li {
+            margin: 10px 0;
+        }
+
+        li time {
+            font-weight: bold;
+        }
+        
+        #citation {
+            font-style: italic;
+            padding: 0 50px;
+        }
+
+        #more-info {
+            font-size: 1.2em;
+            font-weight: bold;
+            padding: 0 30px 15px 30px;
         }
 	</style>
 </head>
@@ -44,24 +81,24 @@
             <h2>The man who saved a billon lives</h2>
         </header>
         <section id="img-div">
-            <img id="image" src="" alt="">
+            <img id="image" src="https://c2.staticflickr.com/4/3689/10613180113_fdf7bcd316_b.jpg" alt="Dr. Norman trains biologists in Mexico">
             <p id="image-caption">Dr. Norman Borlaug, second from left, trains biologists in Mexico on how to increase wheat yields - part of his life-long war on hunger.</p>
         </section>
         <section id="tribute-info">
             <ul><h3>Here's a time line of Dr. Borlaug's life:</h3>
-                <li>1914 - Born in Cresco, Iowa</li>
-                <li>1933 - Leaves his family's farm to attend the University of Minnesota, thanks to a Depression era program known as the "National Youth Administration"</li>
-                <li>1935 - Has to stop school and save up more money. Works in the Civilian Conservation Corps, helping starving Americans. "I saw how food changed them", he said. "All of this left scars on me."</li>
+                <li><time datetime="1914">1914</time> - Born in Cresco, Iowa</li>
+                <li><time datetime="1933">1933</time> - Leaves his family's farm to attend the University of Minnesota, thanks to a Depression era program known as the "National Youth Administration"</li>
+                <li><time datetime="1935">1935</time> - Has to stop school and save up more money. Works in the Civilian Conservation Corps, helping starving Americans. "I saw how food changed them", he said. "All of this left scars on me."</li>
             </ul>
         </section>
-        <sectiona id="citation">
+        <section id="citation">
             <p>"Borlaug's life and achievement are testimony to the far-reaching contribution that one man's towering intellect, persistence and scientific vision can make to human peace and progress."</p>
             <p>-- Indian Prime Minister Manmohan Singh</p>
         </section>
         <footer id="more-info">
             <p>
                 If you have time, you should read more about this incredible human being on his
-                <a href="http://www.google.com" target="_blank">Wikipedia</a> entry.
+                <a href="http://www.google.com" target="_blank">Wikipedia entry</a>.
             </p>
         </footer>
     </main>
