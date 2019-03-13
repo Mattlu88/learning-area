@@ -1,0 +1,26 @@
+body {
+	font: 0.9em/1.2 Arial, Helvetica, sans-serif;
+	background-color: #a9d7d1;
+}
+
+header {
+	text-align: center;
+}
+
+main {
+	max-width: 800px;
+	margin: auto;
+	background-color: white;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+form > div {
+	display:grid;
+	grid-template-columns: repeat(auto-fit, 300px);
+}
+
+label {
+	justify-self: end;
+	padding-right: 10px;
+}
