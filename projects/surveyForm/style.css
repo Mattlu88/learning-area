@@ -11,16 +11,38 @@ main {
 	max-width: 800px;
 	margin: auto;
 	background-color: white;
-	text-align: center;
 	font-size: 1.5em;
 }
 
-form > div {
+.outer-grid {
 	display:grid;
 	grid-template-columns: repeat(auto-fit, 300px);
+	grid-gap:10px;
+	padding-bottom: 10px; 
 }
 
+
 label {
-	justify-self: end;
+	text-align: right;
 	padding-right: 10px;
+}
+
+@media (max-width: 640px) {
+	.outer-grid {
+		display: block;
+		max-width: 300px;
+		margin: auto;
+	}
+	label {
+		text-align: left;
+		display:block;
+	}
+	.outer-grid > input {
+		width: 100%;
+	}
+}
+
+.input-grid{
+	display: grid;
+	grid-template-columns: minmax(max-content, max-content) 1fr;
 }

@@ -13,19 +13,19 @@
     <main>
         <p id="description">Let us know how we can improve CE Finance</p>
         <form id="survey-form">
-            <div>
+            <div class="outer-grid">
                 <label id="name-label" for="name">*Name:</label>
                 <input type="text" name="name" id="name" placeholder="Enter your name">
             </div>
-            <div>
+            <div class="outer-grid">
                 <label id="email-label" for="email">*Email:</label>
                 <input type="email" name="email" id="email" placeholder="Enter your Email">
             </div>
-            <div>
+            <div class="outer-grid">
                 <label id="number-label" for="number">*Age:</label>
                 <input type="number" name="age" id="number" placeholder="Age">
             </div>
-            <div>
+            <div class="outer-grid">
                 <label id="roles-label" for="dropdown">Which option best describes your current role?</label>
                 <select name="roles" id="dropdown">
                     <option value="" disabledo selected>Select an option</option>
@@ -36,15 +36,15 @@
                     <option value="4">Other</option>
                 </select>
             </div>
-            <div>
+            <div class="outer-grid">
                 <label id="rec-label" for="rec-radio">*How likely is that you would recommend freeCodeCamp to a friend?</label>
-                <div>
-                    <input type="radio" name="recommend" id="rec-radio" value="0" checked>Definitely<br>
-                    <input type="radio" name="recommend" id="rec-radio" value="1">Maybe<br>
-                    <input type="radio" name="recommend" id="rec-radio" value="2">Not sure<br>
+                <div class="input-grid">
+                    <input type="radio" name="recommend" id="rec-radio" value="0" checked>Definitely
+                    <input type="radio" name="recommend" id="rec-radio" value="1">Maybe
+                    <input type="radio" name="recommend" id="rec-radio" value="2">Not sure
                 </div>
             </div>
-            <div>
+            <div class="outer-grid">
                 <label id="liking-label" for="liking-dropdown">What do you like most in FCC</label>
                 <div>
                     <select name="liking" id="liking-dropdown">
@@ -56,9 +56,9 @@
                     </select>
                 </div>
             </div>
-            <div>
+            <div class="outer-grid">
                 <label id="wishes-label" for="wish-checkbox">Things that should be improved in the future (Check all that apply):</label>
-                <div>
+                <div class="input-grid">
                     <input type="checkbox" name="front-end-projects" value="Y" id="wish-checkbox">Front-end Projects
                     <input type="checkbox" name="back-end-projects" value="Y" id="wish-checkbox">Back-end Projects
                     <input type="checkbox" name="data-visualization" value="Y" id="wish-checkbox">Data Visualization
@@ -71,11 +71,12 @@
                     <input type="checkbox" name="forum" value="Y" id="wish-checkbox">Forum
                     <input type="checkbox" name="additional-courses" value="Y" id="wish-checkbox">Additional Courses
                 </div>
-                <div>
-                    <label id="suggestions-label" for="suggestions-textarea">Any Comments or Suggestions?</label>
-                    <textarea name="suggestions" id="suggestions-textarea" rows="5" cols="50" placeholder="Enter your comment here..."></textarea>
-                </div>
-                <input type="submit">
+            </div>
+            <div class="outer-grid">
+                <label id="suggestions-label" for="suggestions-textarea">Any Comments or Suggestions?</label>
+                <textarea name="suggestions" id="suggestions-textarea" rows="5" cols="50" placeholder="Enter your comment here..."></textarea>
+            </div>
+            <input type="submit">
         </form>
     </main>
 </body>
