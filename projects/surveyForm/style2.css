@@ -1,18 +1,74 @@
-.rows{
-	display:flex;
-	height:30px;
-	justify-content: center;
+body {
+	font: .9em/1.2 Arial, Helvetica, sans-serif;
+	background-color: #a9d7d1;
+}
+
+header {
+	text-align: center;
+	font-weight: normal;
+}
+
+main {
+	max-width: 800px;
+	min-width: 400px;
+	margin: auto;
+	background-color: white;
+	font-size: 1.1em;
+}
+main p {
+	text-align: center;
+}
+
+.rows {
+	width: 80%;
+	margin:10px auto 10px auto;
 }
 
 .labels {
-	width: 20%;
+	display: inline-block;
+	width: 40%;
 	text-align: right;
 }
 
 .inputs {
-	width: 40%;
+	display: inline-block;
+	width: 50%;
+	vertical-align: top;
 }
 
 input {
-	width: 100%;
+	line-height: 20px;
 }
+
+select {
+	height: 30px;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+li {
+}
+
+.submit {
+   display: flex; 
+   justify-content: center;
+}
+
+@media (max-width: 560px) {
+	.labels {
+		display:block;
+		width: 60%;
+		margin:auto;
+		text-align: left;
+	}
+
+	.inputs{
+		display:block;
+		width: 60%;
+		margin:auto;
+	}
+};
