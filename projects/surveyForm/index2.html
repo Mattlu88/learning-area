@@ -18,7 +18,7 @@
                     <label id="name-label" for="name">*Name:</label>
                 </div>
                 <div class="inputs">
-                    <input type="text" name="name" id="name" placeholder="Enter your name">
+                    <input type="text" name="name" id="name" class="input-fields" placeholder="Enter your name">
                 </div>
             </div>
             <div class="rows">
@@ -26,7 +26,7 @@
                     <label id="email-label" for="email">*Email:</label>
                 </div>
                 <div class="inputs">
-                    <input type="email" name="email" id="email" placeholder="Enter your Email">
+                    <input type="email" name="email" id="email" class="input-fields" placeholder="Enter your Email">
                 </div>
             </div>
             <div class="rows">
@@ -34,7 +34,7 @@
                     <label id="number-label" for="number">*Age:</label>
                 </div>
                 <div class="inputs">
-                    <input type="number" name="age" id="number" placeholder="Age">
+                    <input type="number" name="age" id="number" class="input-fields" placeholder="Age">
                 </div>
             </div>
             <div class="rows">
@@ -42,7 +42,7 @@
                     <label id="roles-label" for="dropdown">Which option best describes your current role?</label>
                 </div>
                 <div class="inputs">
-                    <select name="roles" id="dropdown">
+                    <select name="roles" id="dropdown" class="dropdown-fields">
                         <option value="" disabledo selected>Select an option</option>
                         <option value="0">Student</option>
                         <option value="1">Full Time Job</option>
@@ -54,28 +54,31 @@
             </div>
             <div class="rows">
                 <div class="labels">
-                    <label id="rec-label" for="rec-radio">*How likely is that you would recommend freeCodeCamp to a friend?</label>
+                    <label id="rec-label" for="recommend">*How likely is that you would recommend freeCodeCamp to a friend?</label>
                 </div>
                 <div class="inputs">
                     <ul>
                         <li>
-                            <input type="radio" name="recommend" id="rec-radio" value="0" checked>Definitely
+                            <input type="radio" name="recommend" id="definitely" value="0" checked>
+                            <label for="definitely">Definitely</label>
                         </li>
                         <li>
-                            <input type="radio" name="recommend" id="rec-radio" value="1">Maybe
+                            <input type="radio" name="recommend" id="maybe" value="1">
+                            <label for="maybe">Maybe</label>
                         </li>
                         <li>
-                            <input type="radio" name="recommend" id="rec-radio" value="2">Not sure
+                            <input type="radio" name="recommend" id="not-sure" value="2">
+                            <label for="not-sure">Not sure</label>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="rows">
                 <div class="labels">
-                    <label id="liking-label" for="liking-dropdown">What do you like most in FCC</label>
+                    <label id="liking-label" for="liking-dropdown">What do you like most in FCC:</label>
                 </div>
                 <div class="inputs">
-                    <select name="liking" id="liking-dropdown">
+                    <select name="liking" id="liking-dropdown" class="dropdown-fields">
                         <option value="" disabledo selected>Select an option</option>
                         <option value="0">Challenges</option>
                         <option value="1">Projects</option>
@@ -86,20 +89,55 @@
             </div>
             <div class="rows">
                 <div class="labels">
-                    <label id="wishes-label" for="wish-checkbox">Things that should be improved in the future (Check all that apply):</label>
+                    <label id="wishes-label" for="wishes[]">Things that should be improved in the future (Check all that apply):</label>
                 </div>
                 <div class="inputs">
-                    <input type="checkbox" name="front-end-projects" value="Y" id="wish-checkbox">Front-end Projects<br>
-                    <input type="checkbox" name="back-end-projects" value="Y" id="wish-checkbox">Back-end Projects<br>
-                    <input type="checkbox" name="data-visualization" value="Y" id="wish-checkbox">Data Visualization<br>
-                    <input type="checkbox" name="challenges" value="Y" id="wish-checkbox">Challenges<br>
-                    <input type="checkbox" name="open-source-community" value="Y" id="wish-checkbox">Open Source Community<br>
-                    <input type="checkbox" name="gitter-help-rooms" value="Y" id="wish-checkbox">Gitter help rooms<br>
-                    <input type="checkbox" name="videos" value="Y" id="wish-checkbox">Videos<br>
-                    <input type="checkbox" name="city-meetups" value="Y" id="wish-checkbox">City Meetups<br>
-                    <input type="checkbox" name="wiki" value="Y" id="wish-checkbox">Wiki<br>
-                    <input type="checkbox" name="forum" value="Y" id="wish-checkbox">Forum<br>
-                    <input type="checkbox" name="additional-courses" value="Y" id="wish-checkbox">Additional Courses
+                    <ul>
+                        <li>
+                            <input type="checkbox" name="wishes[]" value="front-end-projects">
+                            <label for="front-end-projects">Front-end Projects</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="wishes[]" value="back-end-projects">
+                            <label for="back-end-projects">Back-end Projects</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="wishes[]" value="data-visualization">
+                            <label for="data-visualization">Data Visualization</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="wishes[]" value="challenges">
+                            <label for="challengs">Challenges</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="wishes[]" value="open-source-community">
+                            <label for="open-source-community">Open Source Community</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="wishes[]" value="gitter-help-rooms">
+                            <label for="gitter-help-rooms">Gitter help rooms</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="wishes[]" value="videos">
+                            <label for="videos">Videos</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="wishes[]" value="city-meetups">
+                            <label for="city-meetups">City Meetups</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="wishes[]" value="wiki">
+                            <label for="wiki">Wiki</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="wishes[]" value="forum">
+                            <label for="forum">Forum</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="wishesa[]" value="additional-courses">
+                            <label for="additional-courses">Additional Courses</label>
+                        </li>
+                        <ul>
                 </div>
             </div>
             <div class="rows">
@@ -107,12 +145,10 @@
                     <label id="suggestions-label" for="suggestions-textarea">Any Comments or Suggestions?</label>
                 </div>
                 <div class="inputs">
-                    <textarea name="suggestions" id="suggestions-textarea" rows="5" cols="50" placeholder="Enter your comment here..."></textarea>
+                    <textarea name="suggestions" id="suggestions-textarea" class="input-fields" placeholder="Enter your comment here..."></textarea>
                 </div>
             </div>
-            <div class="submit">
-                <input type="submit">
-            </div>
+            <input type="submit" value="Submit">
         </form>
     </main>
 </body>

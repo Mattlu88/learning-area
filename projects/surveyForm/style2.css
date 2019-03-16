@@ -10,8 +10,9 @@ header {
 
 main {
 	max-width: 800px;
-	min-width: 400px;
 	margin: auto;
+	padding: 10px;
+	padding-top: 20px;
 	background-color: white;
 	font-size: 1.1em;
 }
@@ -20,20 +21,33 @@ main p {
 }
 
 .rows {
-	width: 80%;
 	margin:10px auto 10px auto;
 }
 
 .labels {
 	display: inline-block;
 	width: 40%;
+	margin: 5px;
+	padding: 5px;
 	text-align: right;
 }
 
 .inputs {
 	display: inline-block;
 	width: 50%;
+	margin:5px;
 	vertical-align: top;
+}
+
+.input-fields {
+	width: 80%;
+	padding: 5px;
+	border: 1px solid #c0c0c0;
+	border-radius: 2px;
+}
+
+.dropdown-fields {
+	width: 140px; 
 }
 
 input {
@@ -51,24 +65,39 @@ ul {
 }
 
 li {
+	padding-bottom: 5px;
 }
 
-.submit {
-   display: flex; 
-   justify-content: center;
+textarea {
+	height: 50px;
+}
+
+input[type="submit"] {
+	display: block;
+	background-color:rgb(89, 171, 222); 
+	width: 100px;
+	margin: auto;
+	padding: 10px 0;
+	font-size: 1.2em;
+	border: 0px solid;
+	border-radius: 2px;
 }
 
 @media (max-width: 560px) {
 	.labels {
 		display:block;
-		width: 60%;
-		margin:auto;
+		width: 80%;
+		margin: 5px auto;
 		text-align: left;
 	}
 
 	.inputs{
 		display:block;
-		width: 60%;
-		margin:auto;
+		width: 80%;
+		margin: 5px auto;
+	}
+
+	.input-fields {
+		width: 100%;
 	}
 };
