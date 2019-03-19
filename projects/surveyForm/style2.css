@@ -1,5 +1,6 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
 body {
-	font: .9em/1.2 Arial, Helvetica, sans-serif;
+	font: .9em/1.2 'Raleway', Arial, Helvetica, sans-serif;
 	background-color: #a9d7d1;
 }
 
@@ -75,12 +76,13 @@ textarea {
 input[type="submit"] {
 	display: block;
 	background-color:rgb(89, 171, 222); 
+	color:white;
 	width: 100px;
 	margin: auto;
 	padding: 10px 0;
 	font-size: 1.2em;
 	border: 0px solid;
-	border-radius: 2px;
+	border-radius: 5px;
 }
 
 @media (max-width: 560px) {
