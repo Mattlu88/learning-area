@@ -73,7 +73,7 @@ textarea {
 	height: 50px;
 }
 
-input[type="submit"] {
+input[type="submit"], button {
 	display: block;
 	background-color:rgb(89, 171, 222); 
 	color:white;
