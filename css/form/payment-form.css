@@ -1,0 +1,48 @@
+form {
+	width: 400px;
+	margin: auto;
+	border: 1px solid #CCC;
+	border-radius: 1em;
+	padding: 1em;
+}
+
+fieldset {
+	margin-left: 130px;
+	width:200px;
+}
+
+ul {
+	margin: 0;
+	padding:0;
+	list-style-type: none;
+}
+
+li {
+	display: inline-block;
+	margin: 0 10px;
+}
+
+p > label {
+	display: inline-block;
+	width: 120px;
+	margin-right: 5px;
+	text-align: right;
+}
+
+label + input {
+	width: 200px;
+}
+
+label + input, select, fieldset {
+	border: 1px solid #999;
+	border-radius: 2px;
+}
+
+input:focus, select:focus {
+	border-color: #000;
+
+}
+
+button {
+	margin-left: 130px;
+}
