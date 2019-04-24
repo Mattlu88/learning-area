@@ -1,0 +1,17 @@
+body {
+	/* Center body */
+	max-width: 500px;
+	margin: auto;
+	font-family: sans-serif;
+}
+
+table {
+	border: 2px solid;
+	border-collapse: collapse;
+	border-spacing: 0px;
+}
+
+td, th {
+	border: 1px solid;
+	padding: 10px 20px;
+}
