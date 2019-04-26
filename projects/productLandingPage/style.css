@@ -1,0 +1,17 @@
+html {
+	font-family: sans-serif;
+	background-color: #F8F8FF;
+}
+
+header {
+	background-color: Teal;
+}
+
+
+.logo-container {
+	display: flex;
+}
+
+.logo-container img {
+	display: inline-block;
+}
