@@ -1,7 +1,4 @@
 body {
-	/* Center body */
-	max-width: 500px;
-	margin: auto;
 	font-family: sans-serif;
 }
 
@@ -14,4 +11,11 @@ table {
 td, th {
 	border: 1px solid;
 	padding: 10px 20px;
+}
+
+col:nth-child(2) {
+	border: 2px solid black;
+	/* Font-weight is not working on column or column-group in table */
+	/* Only a few properties are working to style col or colgroup */
+	font-weight: bold;
 }
