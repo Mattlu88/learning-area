@@ -3,12 +3,15 @@ html {
 	background-color: #F8F8FF;
 }
 
+body {
+	margin: 0;
+}
+
 header {
 	background-color: Teal;
 	/* Make the header stay at the top of the page */
 	position: fixed;
 	top: 0;
-	left: 0;
 	width: 100%;
 	/* Make title and nav bar in a same line */
     display: flex;
@@ -18,7 +21,7 @@ header {
 /* vertical center elements in header */
 header h1, #nav-bar {
 	margin: 0;
-	padding: 20px 10px;
+	padding: 10px 10px;
 }
 
 #header-img {
@@ -50,4 +53,43 @@ nav ul li {
 /* Change menu color when cursor hover on the menu */
 .nav-link:hover {
 	color: white;
+}
+
+form {
+	max-width: 100%;
+	/* The fixed element is taken out of the document flow. Set a top-margin to place it after fixed element */
+	margin: 100px auto;
+	text-align: center;
+}
+
+#email, #submit {
+	display: block;
+	/* Set width 100% for input elements in order to make max-width working */
+	width: 100%;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+#email {
+	max-width: 300px;
+	margin: auto;
+	padding: 7px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+#submit {
+	max-width: 150px;
+	margin: 15px auto;
+	padding: 7px;
+	font-weight: bold;
+	border: 1px solid teal;
+	background-color: white;
+}
+
+#submit:hover {
+	background-color: teal;
+	/* Slowly change color on hover */
+	transition: background-color 1s;
 }
