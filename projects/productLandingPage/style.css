@@ -28,7 +28,7 @@ header h1, #nav-bar {
 	margin-right: 10px;
 }
 
-nav ul	{
+ul	{
 	list-style: none;
 	margin: 0;
 	padding: 0;
@@ -39,7 +39,7 @@ nav ul li {
 	float: left;
 }
 
-.nav-link {
+.list-link {
 	/* Make whole link area clickable not just text */
 	/* Also allow to specify padding, margin etc */
 	display: block;
@@ -51,7 +51,7 @@ nav ul li {
 }
 
 /* Change menu color when cursor hover on the menu */
-.nav-link:hover {
+.list-link:hover {
 	color: white;
 }
 
@@ -82,14 +82,142 @@ form {
 #submit {
 	max-width: 150px;
 	margin: 15px auto;
+}
+
+button {
 	padding: 7px;
 	font-weight: bold;
 	border: 1px solid teal;
 	background-color: white;
 }
 
-#submit:hover {
+button:hover {
 	background-color: teal;
 	/* Slowly change color on hover */
 	transition: background-color 1s;
+	cursor: pointer;
+}
+
+#features-list {
+	max-width: 900px;
+	margin: auto;
+	padding: 0;
+	list-style-type: none;
+}
+
+/* Using background and padding can place images nicely for list */
+#features-list-1 {
+	background: url('assets/img01-300x113.png') no-repeat left top;
+}
+
+#features-list-2 {
+	background: url('assets/img02-300x113.png') no-repeat left top;
+}
+
+#features-list-3 {
+	background: url('assets/img03-300x113.png') no-repeat left top;
+}
+
+#features-list li {
+	min-height: 130px;
+	margin-top: 30px;
+	padding-left: 250px;
+}
+
+.video-responsive{
+/* Center video */
+	max-width: 	800px;
+	margin: 20px auto;
+}
+
+.video-responsive div {
+/* Make video responsive */
+    padding-bottom:56.25%;
+    position:relative;
+}
+
+#video {
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
+#pricing {
+	max-width: 900px;
+	margin: 40px auto;
+	display: flex;
+	justify-content: space-around;
+	/* Same as :
+	 * flex-direction: row;
+	 * flex-wrap: wrap;
+	*/
+	flex-flow: row wrap;
+	clear: both;
+
+}
+
+.price-container {
+	width: 30%;
+	border: 2px solid teal;
+	border-radius: 5px;
+	text-align: center;
+	/* Make sure the btns at the bottom of this container */
+	display: flex;
+	flex-direction: column;
+}
+
+.prod-name {
+	margin: 0;
+	padding: 20px 0;
+	background: teal;
+	color: white;
+	text-transform: uppercase;	
+}
+
+.price {
+	font: bold 1.2em cursive;
+}
+
+.prod-desc {
+	padding: 0 20px;
+	line-height: 2em;
+	/* Make sure the contents have same height when screen width changed
+	 * so the btns in different divs still in alignment
+	*/
+	flex: 3 3 0px;
+}
+
+.select-btn {
+	width: 100px;
+	margin-bottom: 10px;
+	border-radius: 4px;
+	/* Make sure the btns horizontal center in their parents */
+	align-self: center;
+}
+
+footer {
+	font: 0.8em sans-serif;
+	color: teal;
+	margin: 20px auto;
+	text-align: center;
+}
+
+/* Make list horizontal  */
+footer ul {
+	display: flex;
+	justify-content: center;
+}
+
+footer .list-link {
+    color: teal;
+}
+
+footer .list-link:hover {
+    color: teal;
+}
+
+footer p {
+	clear: both;
 }
