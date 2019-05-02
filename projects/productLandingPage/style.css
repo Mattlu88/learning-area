@@ -39,7 +39,7 @@ nav ul li {
 	float: left;
 }
 
-.list-link {
+.list-link, .nav-link {
 	/* Make whole link area clickable not just text */
 	/* Also allow to specify padding, margin etc */
 	display: block;
@@ -51,14 +51,14 @@ nav ul li {
 }
 
 /* Change menu color when cursor hover on the menu */
-.list-link:hover {
+.list-link:hover, .nav-link:hover {
 	color: white;
 }
 
-form {
+#form {
 	max-width: 100%;
 	/* The fixed element is taken out of the document flow. Set a top-margin to place it after fixed element */
-	margin: 100px auto;
+	margin: 116px auto 50px auto;
 	text-align: center;
 }
 
@@ -84,14 +84,14 @@ form {
 	margin: 15px auto;
 }
 
-button {
+button, #submit {
 	padding: 7px;
 	font-weight: bold;
 	border: 1px solid teal;
 	background-color: white;
 }
 
-button:hover {
+button:hover, #submit:hover {
 	background-color: teal;
 	/* Slowly change color on hover */
 	transition: background-color 1s;
@@ -144,7 +144,7 @@ button:hover {
     position:absolute;
 }
 
-#pricing {
+#pricing-section {
 	max-width: 900px;
 	margin: 40px auto;
 	display: flex;
@@ -166,6 +166,37 @@ button:hover {
 	/* Make sure the btns at the bottom of this container */
 	display: flex;
 	flex-direction: column;
+}
+
+@media only screen and (max-width: 700px) {
+	#pricing-section {
+	/* Vertical align price boxes */
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.price-container {
+		width: 65%;
+		margin:20px auto;
+	}
+
+	#features-list-1, #features-list-2, #features-list-3 {
+		background: none;
+	}
+
+	#features-list li {
+		max-width: 80%;
+		margin: auto;
+		padding: 5px;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+
+	header {
+		flex-direction: column;
+		align-items: center;
+	}
 }
 
 .prod-name {
@@ -207,6 +238,7 @@ footer {
 /* Make list horizontal  */
 footer ul {
 	display: flex;
+	flex-flow: row wrap;
 	justify-content: center;
 }
 
