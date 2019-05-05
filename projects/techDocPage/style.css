@@ -1,16 +1,16 @@
  body {
 	font-family: 'Open Sans', sans-serif;
 	line-height: 1.8em;
+	margin:0;
 }
 
 #navbar {
 	float: left;
-	/*vh stands for view-port height, 1vh is 1% of screen height*/
-	height: 100vh;
 	width: 350px;
 	position: fixed;
 	top: 0;
 	left: 0;
+	bottom: 10px;  
 	border-right: 2px solid gray;
 }
 
@@ -21,6 +21,13 @@
 #navbar ul {
 	list-style-type: none;
 	padding: 0;
+	position: absolute;
+	top: 60px;
+	left: 0;
+	right: 0;
+	/* Need set bottom position to show scroll bar */
+	bottom: 10px;  
+	overflow-y: auto;
 }
 
 #navbar ul li {
@@ -31,7 +38,7 @@
 	/* Make the whole area of the list is clickable */
 	display: block;
 	width: 100%;
-	padding: 10px 40px;
+	padding: 8px 40px;
 	box-sizing: border-box;
 	text-decoration: none;
 	color: black;
@@ -67,3 +74,24 @@ code {
     display: block;
     word-wrap: break-word;
 }
+
+@media only screen and (max-width: 1000px) {
+	#navbar {
+		float: none;
+		width: 100%;
+		position: static;
+	}
+
+	#navbar ul {
+		position: static;
+		height: 225px;
+		border: 2px solid gray;
+
+	}
+
+	#main-doc {
+		width: 100%;
+		margin: auto auto;
+	}
+}
+
