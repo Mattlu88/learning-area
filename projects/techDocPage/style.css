@@ -34,7 +34,7 @@
 	border-top: 1px solid;
 }
 
-#navbar ul li a {
+.nav-link {
 	/* Make the whole area of the list is clickable */
 	display: block;
 	width: 100%;
@@ -44,7 +44,7 @@
 	color: black;
 }
 
-#navbar ul li a:hover {
+.nav-link:hover {
 	background-color: rgba(123, 203, 230, 1);
 }
 
