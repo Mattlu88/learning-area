@@ -2,6 +2,39 @@ a {
 	text-decoration: none;
 }
 
+#navbar{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	background-color: gray;
+}
+
+#navbar ul {
+	float: right;
+	list-style-type: none;
+	/* Allow the nav-link to full fill the nav bar */
+	margin: 0px;
+}
+
+#navbar ul li{
+	/* Change list to horizontal */
+	display: inline;
+}
+
+.nav-link {
+	display: inline-block;
+	padding: 20px 50px;
+}
+
+.nav-link:hover {
+	background-color: red;
+}
+
+main {
+	margin-top: 80px;
+}
+
 #proj-container {
 	display: flex;
 	justify-content: center;
@@ -19,10 +52,21 @@ a {
 }
 
 .proj-caption {
+	display: block;
 	border: 1px solid gray;
 }
 
+#contact-flexbox {
+	display: flex;	
+	justify-content: center;
+	flex-flow: row wrap;
+}
+
+.conatc-link {
+}
+
 .contact-item {
+	margin: 20px 60px;
 	width: 100px;
 	height: 100px;
 	border: solid 1px gray;
