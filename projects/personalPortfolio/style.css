@@ -33,7 +33,8 @@ a {
 
 .nav-link {
 	display: inline-block;
-	padding: 20px 50px;
+	padding: 20px 0px;
+	width:150px;
 	color: white;
 }
 
@@ -72,7 +73,7 @@ a {
 	flex-flow: row wrap;
 }
 
-.proj-thumbnail {
+.project-tile {
 	border: 2px solid rgb(224,235,232);
 	width: 300px;
 	margin: 20px 100px;
