@@ -54,16 +54,19 @@ function deleteIssue(elmnt) {
 function closeIssue(elmnt) {
     let issueId = elmnt.target.parentElement.parentElement.id;
     let issueList = getIssueList();
-    localStorage.setItem(lsName, JSON.stringify(issueList.map(obj => {
-                                                                if (obj.id === issueId) {
-                                                                    obj.status = 'closed';
-                                                                }
-                                                                 return obj;
-                                                            })));
+    let currentIssue = issueList.find(obj => obj.id === issueId);
+    // Change issue status
+    if (currentIssue.status === 'open') {
+        issueList[issueList.indexOf(currentIssue)].status = 'closed';
+    } else {
+        issueList[issueList.indexOf(currentIssue)].status = 'open';
+    }
+    localStorage.setItem(lsName, JSON.stringify(issueList));
     let issueDiv = document.getElementById(issueId);
     let statusBtn = issueDiv.getElementsByClassName('status-btn')[0];
-    statusBtn.innerHTML = 'closed';
-    setStatusBtn(statusBtn, 'closed');
+    setStatusBtn(statusBtn, currentIssue.status);
+    let closeBtn = issueDiv.getElementsByClassName('operate-btn')[0];
+    setCloseBtn(closeBtn, currentIssue.status);
 }
 
 function getUniqueIssueId() {
@@ -161,9 +164,11 @@ function showEachIssue(issueObj) {
 
 function setStatusBtn(elmt, status) {
     if (status === 'open') {
+        elmt.innerHTML = 'Open';
         elmt.classList.remove('closed-bg');
         elmt.classList.add('open-bg');
     } else {
+        elmt.innerHTML = 'Closed';
         elmt.classList.remove('open-bg');
         elmt.classList.add('closed-bg');
     }
@@ -171,9 +176,11 @@ function setStatusBtn(elmt, status) {
 
 function setCloseBtn(elmt, status) {
     if (status === 'open') {
+        elmt.innerHTML = 'Close';
         elmt.classList.remove('open-bg');
         elmt.classList.add('closed-bg');
     } else {
+        elmt.innerHTML = 'Open';
         elmt.classList.remove('closed-bg');
         elmt.classList.add('open-bg');
     }
