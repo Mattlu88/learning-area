@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welcome | JS Issue Tracker</title>
+        <link rel="stylesheet" href="main.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1>JS Issue Tracker</h1>
+        </header>
+        <form id="add-new-form" method="post">
+            <h2>Add New Issue:</h2>
+            <div>
+                <label for="description" class="label-for-input">Description</label>
+                <input type="text"  name="description" id="description" class="form-input" placeholder="Describe the issue ..." required autofocus>
+            </div>
+            <div>
+                <label for="severity" class="label-for-input">Severity</label>
+                <select id="severity" name="severity" class="form-input" required>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select> 
+            </div>
+            <div>
+                <label for="responsible" class="label-for-input">Assigned To</label>
+                <input type="text" id="responsible" name="responsible" class="form-input" placeholder="Enter responsible ..." required>
+            </div>
+            <button id="add-btn" type="submit">Add</button>
+        </form>
+        <section id="issues-area">
+        </section>
+        <footer>
+            <p>&copy; We The North</p>
+        </footer>
+        <script src="main.js"></script>
+    </body>
+</html>

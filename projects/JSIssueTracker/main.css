@@ -1,0 +1,88 @@
+body {
+    width: 90%;
+    margin: auto;
+}
+
+#add-new-form, .issue-container {
+    background-color: rgba(238, 238, 238, 1);
+    margin: 25px 0;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.label-for-input, .form-input {
+    display: block;
+}
+
+.label-for-input {
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.form-input {
+    width: 100%;
+    height: 35px;
+    margin-bottom: 10px;
+    padding: 0px 5px;
+    border: solid 1px silver;
+    border-radius: 5px;
+    /* Make input and select that got same width */
+    /* content-box will cause elemnts overrun its container */
+    box-sizing: border-box; 
+}
+
+#add-btn {
+    background-color:rgba(52, 122, 183, 1);
+    width: 55px;
+    height: 35px;
+    margin: 5px 0px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.bold-par {
+    font-weight: bold;
+}
+
+.status-btn {
+    height: 20px;
+    width: 50px; 
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+.material-icons.md-18 { font-size: 18px; } 
+
+.icon-div {
+    display: flex;
+    align-items: flex-end;
+    margin: 10px 0;
+}
+
+.name-after-icon {
+    margin: 0 5px;
+}
+
+.operate-btn {
+    height: 35px;
+    width: 60px;
+    margin-right: 5px;
+    border:none;
+    border-radius: 5px;
+    color: white;
+}
+
+.open-bg {
+    background-color: rgba(91, 192, 223, 1);
+}
+
+.closed-bg {
+    background-color: rgba(240, 173, 78, 1);
+}
+
+#delete-btn {
+    background-color: rgba(217, 83, 79, 1);
+}
