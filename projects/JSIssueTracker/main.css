@@ -97,6 +97,6 @@ header h1, #subtitle{
     background-color: rgba(240, 173, 78, 1);
 }
 
-#delete-btn {
+.delete-btn {
     background-color: rgba(217, 83, 79, 1);
 }

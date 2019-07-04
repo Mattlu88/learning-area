@@ -1,5 +1,131 @@
-const lsName  = 'issueList'
- 
+const lsName  = 'issueList'; // local storage name
+
+var circle = {
+    radius : 10,
+    area : () => { 
+       return Math.PI * this.radius * this.radius; 
+    }
+};
+
+var view = {
+    uniqueNum: 0,
+
+    getUniqueNum : function () {
+        this.uniqueNum++;
+        return 'w_' + this.uniqueNum;
+    },
+
+    issueDivId: [],
+
+    setIssueDivId : function (id) {
+        this.issueDivId.push(id);
+    },
+
+    getLatestIssueId : function () {
+        return this.issueDivId.slice(this.issueDivId.length-1, this.issueDivId);
+    },
+
+    // Create elements for issue display
+    createIssueElements : function () {
+        // The root node
+        let sect = document.getElementById('issues-area');
+        // Create a div container for each issue
+        let div = document.createElement('DIV');
+        div.className = 'issue-container';
+        div.id = this.getUniqueNum();
+        this.setIssueDivId(div.id);
+        sect.insertBefore(div, sect.firstChild);
+
+        // Create <p> to display issue id
+        let p = document.createElement('P');
+        p.innerHTML = 'Issue ID: '
+        p.className = 'bold-par';
+        p.id = this.getUniqueNum();
+        div.appendChild(p);
+        let idData = document.createElement('DATA');
+        idData.id = this.getUniqueNum();
+        p.appendChild(idData);
+
+        // Create a button to display issue status
+        let statusBtn = document.createElement('BUTTON');
+        statusBtn.innerHTML = 'open';
+        statusBtn.className = 'status-btn';
+        statusBtn.classList.add('open-bg');
+        statusBtn.id = this.getUniqueNum();
+        div.appendChild(statusBtn);
+
+        // Create a h3 to display issue description
+        let descH3 = document.createElement('H3');
+        descH3.id = this.getUniqueNum();
+        div.appendChild(descH3);
+
+        let iconDiv = document.createElement('DIV');
+        iconDiv.className = 'icon-div';
+        iconDiv.id = this.getUniqueNum();
+        div.appendChild(iconDiv);
+        // Create a <i> to display the icon
+        let severIcon = document.createElement('I');
+        severIcon.innerHTML = 'access_time';
+        severIcon.className = 'material-icons md-18';
+        severIcon.id = this.getUniqueNum();
+        iconDiv.appendChild(severIcon);
+        // Create <p></p> to display issue severity
+        let severP = document.createElement('P');
+        severP.className = 'name-after-icon';
+        severP.id = this.getUniqueNum();
+        iconDiv.appendChild(severP);
+
+        let respIcon = document.createElement('I');
+        respIcon.innerHTML = 'person';
+        respIcon.className = 'material-icons md-18';
+        respIcon.id = this.getUniqueNum();
+        iconDiv.appendChild(respIcon);
+        // Create <p><img></p> to display responsible person 
+        let respP = document.createElement('P');
+        respP.className = 'name-after-icon'
+        respP.id = this.getUniqueNum();
+        iconDiv.appendChild(respP);
+
+        let btsDiv = document.createElement('DIV');
+        btsDiv.id = this.getUniqueNum();
+        div.appendChild(btsDiv);
+        //Create close button
+        let closeBtn = document.createElement('BUTTON');
+        closeBtn.innerHTML = 'Closed';
+        closeBtn.className = 'operate-btn'
+        closeBtn.classList.add('close-btn');
+        closeBtn.classList.add('closed-bg');
+        //closeBtn.id = "close-btn";
+        closeBtn.id = this.getUniqueNum();
+        closeBtn.setAttribute('type', 'submit');
+        btsDiv.appendChild(closeBtn);
+        //Create delete button
+        let deleteBtn = document.createElement('BUTTON');
+        deleteBtn.innerHTML = 'Delete';
+        deleteBtn.className = 'operate-btn';
+        deleteBtn.classList.add('delete-btn');
+        deleteBtn.id = this.getUniqueNum();
+        closeBtn.setAttribute('type', 'submit');
+        btsDiv.appendChild(deleteBtn);
+    },
+
+    // Remove the elements when delete button clicked
+    removeIssueElements : (elmtId) => {
+        document.getElementById(elmtId).remove();
+    },
+
+    displayIssue : function (elmtId, issueObj) {
+        let issueDiv = document.getElementById(elmtId);
+        let dataElmt = document.getElementsByTagName('data')[0];
+        dataElmt.innerHTML = issueObj.id;
+        let severPara = document.getElementsByClassName('name-after-icon')[0];
+        severPara.innerHTML = issueObj.severity;
+        let respPara = document.getElementsByClassName('name-after-icon')[1];
+        respPara.innerHTML = issueObj.responsible;
+    },
+
+} 
+
 var Issue = function() {
     this.id,
     this.description,
@@ -86,79 +212,9 @@ function showIssues() {
 }
 
 function showEachIssue(issueObj) {
-    let sect = document.getElementById('issues-area');
 
-    // Create div container for each issue
-    let div = document.createElement('DIV');
-    div.className = 'issue-container';
-    // In order to get the issue easier when the btn get clicked 
-    div.id = issueObj.id;
-    //sect.appendChild(div);
-    sect.insertBefore(div, sect.firstChild);
-
-    // Create <p> to display issue id
-    let p = document.createElement('P');
-    p.innerHTML = 'Issue ID: '
-    p.className = 'bold-par';
-    div.appendChild(p);
-    let idData = document.createElement('DATA');
-    idData.innerHTML = issueObj.id;
-    idData.id = 'issue-id';
-    p.appendChild(idData);
-
-    // Create a button to display issue status
-    let statusBtn = document.createElement('BUTTON');
-    statusBtn.innerHTML = issueObj.status;
-    statusBtn.className = 'status-btn';
-    setStatusBtn(statusBtn, issueObj.status);
-    div.appendChild(statusBtn);
-
-    // Create a h3 to display issue description
-    let descH3 = document.createElement('H3');
-    descH3.innerHTML = issueObj.description;
-    div.appendChild(descH3);
-
-    let iconDiv = document.createElement('DIV');
-    iconDiv.className = 'icon-div';
-    div.appendChild(iconDiv);
-    // Create a <i> to display the icon
-    let severIcon = document.createElement('I');
-    severIcon.innerHTML = 'access_time';
-    severIcon.className = 'material-icons md-18';
-    iconDiv.appendChild(severIcon);
-    // Create <p></p> to display issue severity
-    let severP = document.createElement('P');
-    severP.innerHTML = issueObj.severity;
-    severP.className = 'name-after-icon';
-    iconDiv.appendChild(severP);
-
-    let respIcon = document.createElement('I');
-    respIcon.innerHTML = 'person';
-    respIcon.className = 'material-icons md-18';
-    iconDiv.appendChild(respIcon);
-    // Create <p><img></p> to display responsible person 
-    let respP = document.createElement('P');
-    respP.innerHTML = issueObj.responsible;
-    respP.className = 'name-after-icon'
-    iconDiv.appendChild(respP);
-
-    let btsDiv = document.createElement('DIV');
-    div.appendChild(btsDiv);
-    //Create close button
-    let closeBtn = document.createElement('BUTTON');
-    closeBtn.innerHTML = 'Close'
-    closeBtn.className = "operate-btn"
-    setCloseBtn(closeBtn, issueObj.status);
-    closeBtn.id = "close-btn";
-    closeBtn.setAttribute('type', 'submit');
-    btsDiv.appendChild(closeBtn);
-    //Create delete button
-    let deleteBtn = document.createElement('BUTTON');
-    deleteBtn.innerHTML = 'Delete'
-    deleteBtn.className = "operate-btn"
-    deleteBtn.id = "delete-btn";
-    closeBtn.setAttribute('type', 'submit');
-    btsDiv.appendChild(deleteBtn);
+    view.createIssueElements();
+    view.displayIssue(view.getLatestIssueId, issueObj);
 
 }
 
