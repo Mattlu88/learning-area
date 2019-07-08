@@ -1,12 +1,5 @@
 const lsName  = 'issueList'; // local storage name
 
-var circle = {
-    radius : 10,
-    area : () => { 
-       return Math.PI * this.radius * this.radius; 
-    }
-};
-
 var view = {
     uniqueNum: 0,
 
@@ -22,7 +15,7 @@ var view = {
     },
 
     getLatestIssueId : function () {
-        return this.issueDivId.slice(this.issueDivId.length-1, this.issueDivId);
+        return this.issueDivId.slice(this.issueDivId.length-1, this.issueDivId.length);
     },
 
     // Create elements for issue display
@@ -116,48 +109,52 @@ var view = {
 
     displayIssue : function (elmtId, issueObj) {
         let issueDiv = document.getElementById(elmtId);
-        let dataElmt = document.getElementsByTagName('data')[0];
+        let dataElmt = issueDiv.getElementsByTagName('data')[0];
         dataElmt.innerHTML = issueObj.id;
-        let severPara = document.getElementsByClassName('name-after-icon')[0];
+        let severPara = issueDiv.getElementsByClassName('name-after-icon')[0];
         severPara.innerHTML = issueObj.severity;
-        let respPara = document.getElementsByClassName('name-after-icon')[1];
+        let respPara = issueDiv.getElementsByClassName('name-after-icon')[1];
         respPara.innerHTML = issueObj.responsible;
     },
 
-} 
+}; 
 
-var Issue = function() {
-    this.id,
-    this.description,
-    this.severity,
-    this.responsible,
-    this.status
-}
+var controller  = {
+    getIssueList : () => !localStorage.getItem(lsName) ? [] : JSON.parse(localStorage.getItem(lsName)),
+
+};
+
+//constructor
+var Issue = function(id, description, severity, responsible, status) {
+    this.id = id,
+    this.description = description,
+    this.severity = severity,
+    this.responsible = responsible,
+    this.status = status
+};
+
 
 window.onload = function() {
     //show Issues here
-    showIssues();
+    showIssues(controller.getIssueList());
+
     let addBtn = document.querySelector("#add-btn");
     addBtn.addEventListener('click', e => addIssue());
 
-    let deleteBtnList = [...document.querySelectorAll("#delete-btn")];
+    let deleteBtnList = [...document.querySelectorAll(".delete-btn")];
     deleteBtnList.forEach(btn => btn.addEventListener('click', e => deleteIssue(e)));
 
-    let closeBtnList = [...document.querySelectorAll("#close-btn")];
+    let closeBtnList = [...document.querySelectorAll(".close-btn")];
     closeBtnList.forEach(btn => btn.addEventListener('click', e => closeIssue(e)));
-}
-
-function getIssueList() {
-    return !localStorage.getItem(lsName) ? [] : JSON.parse(localStorage.getItem(lsName));
 }
 
 function addIssue() {
     let inputList = [...document.querySelectorAll(".form-input")];
-    if (inputList.some(obj => !obj.value)) {
+    if (inputList.some(inputElement => !inputElement.value)) {
         return;
     }
 
-    let issueList = getIssueList();
+    let issueList = controller.getIssueList();
     let newIssue = new Issue();
     newIssue.id = getUniqueIssueId();
     newIssue.status = 'open';
@@ -170,16 +167,17 @@ function addIssue() {
 }
 
 function deleteIssue(elmnt) {
-    let issueId = elmnt.target.parentElement.parentElement.id;
-    let issueList = getIssueList();
+    let issueContainer = elmnt.target.parentElement.parentElement;
+    let issueId = issueContainer.getElementsByTagName('data')[0].innerHTML;
+    let issueList = controller.getIssueList();
     localStorage.setItem(lsName, JSON.stringify(issueList.filter(obj => obj.id !== issueId)));
-    let issueDiv = document.getElementById(issueId);
-    issueDiv.remove();
+    view.removeIssueElements(issueContainer.id);
 }
 
 function closeIssue(elmnt) {
-    let issueId = elmnt.target.parentElement.parentElement.id;
-    let issueList = getIssueList();
+    let issueContainer = elmnt.target.parentElement.parentElement;
+    let issueId = issueContainer.getElementsByTagName('data')[0].innerHTML;
+    let issueList = controller.getIssueList();
     let currentIssue = issueList.find(obj => obj.id === issueId);
     // Change issue status
     if (currentIssue.status === 'open') {
@@ -188,10 +186,9 @@ function closeIssue(elmnt) {
         issueList[issueList.indexOf(currentIssue)].status = 'open';
     }
     localStorage.setItem(lsName, JSON.stringify(issueList));
-    let issueDiv = document.getElementById(issueId);
-    let statusBtn = issueDiv.getElementsByClassName('status-btn')[0];
+    let statusBtn = issueContainer.getElementsByClassName('status-btn')[0];
     setStatusBtn(statusBtn, currentIssue.status);
-    let closeBtn = issueDiv.getElementsByClassName('operate-btn')[0];
+    let closeBtn = issueContainer.getElementsByClassName('operate-btn')[0];
     setCloseBtn(closeBtn, currentIssue.status);
 }
 
@@ -202,20 +199,16 @@ function getUniqueIssueId() {
       });
 }
 
-function showIssues() {
-    let issueList = getIssueList()
+function showIssues(issueList) {
     if (!issueList) {
         return;
     }
-
-    issueList.forEach(obj => showEachIssue(obj)); 
+    issueList.forEach((e) => showSingleIssue(e)); 
 }
 
-function showEachIssue(issueObj) {
-
+function showSingleIssue(singleIssue) {
     view.createIssueElements();
-    view.displayIssue(view.getLatestIssueId, issueObj);
-
+    view.displayIssue(view.getLatestIssueId(), singleIssue);
 }
 
 function setStatusBtn(elmt, status) {
