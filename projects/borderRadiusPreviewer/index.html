@@ -6,9 +6,9 @@
 </head>
 <body class="bg-light">
     <div class="container-fluid">
-        <h1 class="text-center">CSS Border Raidus Generator</h1>
-        <div class="m-4 d-flex justify-content-center">
-            <div class="d-flex flex-column">
+        <h1 class="text-center m-5">CSS Border Raidus Generator</h1>
+        <div class="w-50 m-auto d-flex justify-content-center">
+            <div class="col-3 d-flex flex-column">
                 <div class="d-flex">
                     <input id="top-left-input" type="text" class="radius-input w-25 ml-auto pl-2" autofocus tabindex="1">
                 </div>
@@ -16,23 +16,23 @@
                     <input id="bottom-left-input" type="text" class="radius-input w-25 ml-auto pl-2" tabindex="4">
                 </div>
             </div>
-            <div id="border-div" class="ml-3 mr-3 pt-5 pl-5 pr-5 bg-secondary">
-                <div>
-                    <textarea id="display-text" cols="60" rows="12" readonly></textarea>
+            <div id="border-div" class="col-7 ml-3 mr-3 pt-5 pl-5 pr-5 bg-secondary">
+                <div class="w-100">
+                    <textarea id="display-text" cols="60" rows="12" class="w-100" readonly></textarea>
                 </div>
                 <div class="mt-2 mb-3 text-center">
                     <label>
-                        <input type="checkbox" id="webkit" class="browser-type ml-1 mr-1" checked>WebKit
+                        <input type="checkbox" id="webkit" class="browser-type ml-1 mr-1" value="webkit" checked>WebKit
                     </label>
                     <label>
-                        <input type="checkbox" id="gecko" class="browser-type ml-1 mr-1" checked>Gecko
+                        <input type="checkbox" id="gecko" class="browser-type ml-1 mr-1" value="gecko" checked>Gecko
                     </label>
                     <label>
-                        <input type="checkbox" id="css3" class="browser-type ml-1 mr-1" checked>CSS3
+                        <input type="checkbox" id="css3" class="browser-type ml-1 mr-1" value="css3" checked>CSS3
                     </label>
                 </div>
             </div>
-            <div class="d-flex flex-column">
+            <div class="col-3 d-flex flex-column">
                 <div class="d-flex">
                     <input id="top-right-input" type="text" class="radius-input w-25 mr-auto pl-2" tabindex="2">
                 </div>
@@ -41,8 +41,8 @@
                 </div>
             </div>
         </div>
-        <div class="text-center">
-            <button type="button">Copy to Clipboard</button>
+        <div class="text-center m-4">
+            <button id="copy-btn" type="button" class="btn btn-outline-secondary">Copy to Clipboard</button>
         </div>
     </div>
     <script src="dom.js"></script>
