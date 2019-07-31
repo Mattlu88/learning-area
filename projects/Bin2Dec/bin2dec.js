@@ -77,7 +77,8 @@ var controller = {
 };
 
 window.onload = () => {
-    view.convertBtn.addEventListener('click', controller.convertToDec.bind(controller));
+    //view.convertBtn.addEventListener('click', controller.convertToDec.bind(controller));
+    view.convertBtn.addEventListener('click', () => {controller.convertToDec()});
     view.resetBtn.addEventListener('click', controller.resetInput.bind(controller));
     view.closeAlertBtn.addEventListener('click', view.removeAlertMsg.bind(view));
 };

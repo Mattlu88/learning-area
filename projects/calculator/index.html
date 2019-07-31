@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<head>
+  <title>Welcome | JS Calculator</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container-fluid mt-5">
+    <div id="calculator-div" class="w-25 m-auto pb-4 bg-dark d-flex flex-column">
+      <div id="output-div" class="col display-2">
+        <p id="output" class="text-white text-right mr-4 mb-0">0</p>
+      </div>
+      <div id="input-div" class="col h1">
+        <div id="row1-div" class="d-flex flex-nowrap justify-content-between">
+          <div class="col-3 first-col">
+            <button id="all-clear-btn" class="btn btn-secondary">AC</button>
+          </div>
+          <div class="col-3">
+            <button id="plus-minus-btn" class="btn btn-secondary">&#177;</button>
+          </div>
+          <div class="col-3">
+            <button class="btn btn-secondary" id ="percent-btn">&percnt;</button>
+          </div>
+          <div class="col-3">
+            <button id="division" class="btn btn-warning">&divide;</button>
+          </div>
+        </div>
+        <div id="row2-div" class="d-flex flex-nowrap">
+          <div class="col-3 first-col ">
+            <button id="seven" class="btn btn-light" name="number" value=7>7</button>
+          </div>
+          <div class="col-3">
+            <button id="eight" class="btn btn-light" name="number" value=8>8</button>
+          </div>
+          <div class="col-3">
+            <button id="nine" class="btn btn-light" name="number" value=9>9</button>
+          </div>
+          <div class="col-3">
+            <button id="multiplication" class="btn btn-warning">&times;</button>
+          </div>
+        </div>
+        <div id="row3-div" class="d-flex flex-nowrap">
+          <div class="col-3 first-col">
+            <button id="four" class="btn btn-light" name="number" value="4">4</button>
+          </div>
+          <div class="col-3">
+            <button id="five" class="btn btn-light" name="number" value="5">5</button>
+          </div>
+          <div class="col-3">
+            <button id="six" class="btn btn-light" name="number" value="6">6</button>
+          </div>
+          <div class="col-3">
+            <button id="substraction" class="btn btn-warning">&minus;</button>
+          </div>
+        </div>
+        <div id="row4-div" class="d-flex flex-nowrap">
+          <div class="col-3 first-col">
+            <button id="one" class="btn btn-light" name="number" value="1">1</button>
+          </div>
+          <div class="col-3">
+            <button id="two" class="btn btn-light" name="number" value="2">2</button>
+          </div>
+          <div class="col-3">
+            <button id="three" class="btn btn-light" name="number" value="3">3</button>
+          </div>
+          <div class="col-3">
+            <button id="addition" class="btn btn-warning">&plus;</button>
+          </div>
+        </div>
+        <div id="row5-div" class="d-flex flex-nowrap">
+          <div class="col-3 col-6 first-col">
+            <button id="zero" class="btn btn-light" name="number" value="0">0</button>
+          </div>
+          <div class="col-3">
+            <button id="decimal-point" class="btn btn-light" name="number" value=".">.</button>
+          </div>
+          <div class="col-3">
+            <button id="equals" class="btn btn-warning">&equals;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="dom.js"></script>
+</body>
+</html>
