@@ -74,3 +74,128 @@ const percentBtn = document.querySelector('#percent-btn');
 percentBtn.addEventListener('click', () => {
   currentOutput.result = calculation.percentage(currentOutput.result);
 });
+
+
+/*
+let currNum;  // Current number entry
+let currOperation; // Current operation entry
+let firstOpd; // the first operand stored
+let secondOpd; // the second operand stored
+let thirdOpd; // the third operand stored
+let firstOperation;   // the first operation stored
+let secondOperation; // the second operation stored
+
+if numbers clicked {
+  if firstOpd !== null {
+    if secondOpd === null {
+      set firstOperation = currentOperation    2 *
+    }
+  }
+  set currNum;
+}
+
+if operations clicked {
+  set currOperation;
+
+  if firstOpd === null {
+    set firstOpd = currOpd;      2
+  } else {
+     if secondOpd  !== null {   2 * 3
+        if secondOperation === null {
+          if currOperation is multiply or divide {       
+            if firstOperation is multiply  or  divide {   2 * 3 *
+              set firstOperand = result
+              set firstOperation = currentOperation       
+              set secondOpd = null               
+              output is result    6 *
+            } else {  first operation is +/-/=          2 + 3 *
+              set secondOperation = currentOperation
+              output is secondOpd    3 *
+            }
+          } else {   current operation is +/-
+            if firstOperation is multiply or divide {          2 * 3 +
+              set firstOperand = result
+              set firstOperation = currentOperation       
+              set secondOpd = null               
+              output is result    6 +
+            } else { first operation is +/-/=      2 + 3 +
+              set firstOperand = result
+              set firstOperation = currentOperation       
+              set secondOpd = null               
+              output is result    5 +
+            }
+          }
+        } else {    2 + 3 * 4 
+          let thirdOpd = currNum
+          if current operation is  * or / {    2 + 3 * 4 *
+            set secondOpd = secondOpd secondOperation thirdOpd
+            set thirdOpd = null
+            set secondOpd = currOperation
+            output is secondOpd        12 *
+          } else {   current operation is +/-      2 + 3 * 4 +
+              set firstOperand = result
+              set firstOperation = currentOperation       
+              set secondOpd = null               
+              set thirdOpd = null
+              set secondOperation = null
+              output is result    14 +
+          }
+        }
+      }
+    }
+  }
+}
+
+
+let currNum;
+let currOperation;
+let oprdOne;
+let oprdTwo;
+let oprdThree;
+let opOne;
+let opTwo;
+
+if numbers entered {
+  set currNum;
+  if oprdOne !== null && opOne === null {
+    set opOne = currOperation;
+    set currOperation = null;
+  }
+}
+
+if operations entered {
+  set currOperation;
+  if oprdOne === null {
+    set oprdOne = currNum;
+    return;   // continue input
+  }
+  if opOne === null {
+    return;   // changing operations;
+  }
+  if oprdTwo === nul {
+    set oprdTwo = currNum;
+    if opOne >= currOperation {
+      set oprdOne = opOne(oprdOne, oprdTwo);
+      set oprdTwo = null;
+      set opOne = currOperation;
+      ouput = oprdOne;
+    } else {
+      set opTwo = currOperation;
+      output = oprdTwo;
+    }
+    return;
+  }
+  if opTwo === currOperation {
+    set oprdTwo = opTwo(oprdTwo, currNum);
+    set opTwo === currOperation; 
+    output = oprdTwo;
+  } else {
+    set oprdOne = opOne(oprdOne, opTwo(oprdTwo, currNum));
+    set oprdTwo = null;
+    set opOne = currOperation;
+    set opTwo = null;
+    output= oprdOne;
+  }
+}
+
+*/
